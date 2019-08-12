@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-us" ng-app="venueLocator">
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script  type="text/javascript" src="app.js"></script>
+    <script  type="text/javascript" src="Controllers/GeoLocatorController.js"></script>
+    <script  type="text/javascript" src="Services/GeoLocatorService.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Styles/style.css" />
+  </head>
+
+  <body ng-controller="GeoLocatorController" ng-init="renderMap()">
+  <div class="container marginBottom">
+    <div class="row col-md-12 venueHeading marginZero">
+      <div class="col-md-12 alineCenter">
+          <h3>Welcome to Venue Locator</h3> 
+      </div>
+
+      <div class="col-md-12 alineCenter lineHeight">
+          <p>Search your nearby Places</p>
+      </div> 
+
+      <div class="row venueBody col-md-12">
+        <div class="lineHeight col-md-6 col-12 paddingRightZero">
+          <p>Select your Radius (in meters) : </p> 
+          <p>*Note : By Default it is 2000 meters</p>         
+        </div>
+        <div class="col-md-3 col-6">
+          <select class="selectRadius" title="Choose one of the following..." 
+          ng-model="selectedRadius" ng-init="selectedRadius = radiusList[1]" ng-options="x.radius for x in radiusList">            
+          </select>
+        </div>
+        <div class="col-md-3 col-6">
+            <button type="button" class="btn btnSubmit" name="submit" ng-model="submit" ng-disabled="btnDisabled"
+            ng-click="updateRadius(selectedRadius.radius)">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="map" class="row marginZero">
+      <div class="text-center spinner">
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">          
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+
+</html>
