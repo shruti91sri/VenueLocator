@@ -1,0 +1,55 @@
+#map {
+	height: 75vh;;
+	width: 100%;
+	border: 1px solid black;
+}
+
+.venueHeading {
+	color: darkblue;
+	padding: 5px;	
+    display: inline-block;
+}
+
+.alineCenter {
+	text-align: center;
+}
+
+.lineHeight {
+	line-height: 4px;
+}
+
+.venueBody {
+	padding-top: 15px;
+	padding-right: 0px; 
+}
+
+.selectRadius {
+   width: 100px;	
+   color: #000000;   
+   background-color: #D7DBDD;
+   padding-left: 15px;
+}
+
+.btnSubmit {
+	padding: 2px;
+	width: 100px;
+	color: #000000;
+    background-color: #D7DBDD;
+    border-color: #D7DBDD;
+}
+
+.spinner {
+	padding-left: 50%;
+    padding-top: 5%;
+}
+
+.marginZero {
+	margin : 0px;
+}
+
+.marginBottom{
+	margin-bottom: 24px;
+}
+.paddingRightZero {
+	padding-right: 0px;
+}
